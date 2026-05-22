@@ -1,0 +1,26 @@
+# Secrets — NEVER COMMIT
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# macOS clutter
+.DS_Store
+
+# Odoo runtime
+__pycache__/
+*.pyc
+*.pyo
+
+# Local volumes (in case operator binds them to repo path by mistake)
+volumes/
+postgres-data/
+odoo-data/
+odoo-logs/
+
+# nginx certs landed locally during testing
+nginx/certs/
+nginx/letsencrypt/
