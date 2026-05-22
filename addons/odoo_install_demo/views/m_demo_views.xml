@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_install_demo_tree" model="ir.ui.view">
+        <field name="name">install.demo.tree</field>
+        <field name="model">install.demo</field>
+        <field name="arch" type="xml">
+            <tree string="Install Demo">
+                <field name="name"/>
+                <field name="status"/>
+                <field name="check_count"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_install_demo_form" model="ir.ui.view">
+        <field name="name">install.demo.form</field>
+        <field name="model">install.demo</field>
+        <field name="arch" type="xml">
+            <form string="Install Demo">
+                <header>
+                    <button name="action_mark_ok" type="object" string="Mark OK" class="oe_highlight"/>
+                    <field name="status" widget="statusbar" statusbar_visible="draft,ok,ko"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="check_count"/>
+                        <field name="note"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_install_demo" model="ir.actions.act_window">
+        <field name="name">Install Demo</field>
+        <field name="res_model">install.demo</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Tao mot ban ghi de xac nhan Odoo da cai dat thanh cong.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_install_demo_root" name="Install Demo" sequence="80"/>
+    <menuitem id="menu_install_demo_records" name="Records" parent="menu_install_demo_root" action="action_install_demo" sequence="10"/>
+</odoo>
